@@ -89,10 +89,7 @@ body {
 }
 
 
-@keyframes fadeDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+table, th , td{
+  border: #1f2933 solid 1px;
 }
 
