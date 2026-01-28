@@ -25,5 +25,24 @@
 
     </form>
     </div>
+
+    <div> 
+
+    <h1>Products</h1>
+    <form action="FUNCTIONS/Products.php" method="POST">
+        <label for="">Product Name</label> 
+        <input type="text" name = "prod_name">
+        <label for="">Product Quantity</label> 
+        <input type="number" name = "prod_quantity">
+        <label for="">Type of Product</label> 
+        <input type="text" name = "prod_type">
+         <label for="">Price of Product</label> 
+        <input type="number" name = "prod_price">
+        <label for="">Product Date</label> 
+        <input type="date" name = "prod_date_added">
+        <button>Submit</button>
+
+    </form>
+    </div>
 </body>
 </html>
