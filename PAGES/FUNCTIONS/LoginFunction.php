@@ -1,19 +1,18 @@
 <?php
 
-     if(isset($_POST['username']) && isset($_POST['password'])){
-       $username = $_POST['username'];
-       $password = $_POST['password'];
+include "../../CONFIG/includes.php";
 
-       $my_uname = "admin";
-       $my_pass = "password";
-       $user_name = "Chaff Hickory Velila";
+if (isset($_POST['username']) && isset($_POST['password'])) {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
 
-       if($username == $my_uname && $password == $my_pass){
-        echo "<script> window .location.href = '../Dashboard.php?name=".$user_name."'</script>";
-       }else{
-         echo "<script> window .location.href = '../login.php?status=false ' </script>";
-       }
+  $result = loginAuth($username, $password);
 
-          echo " Your username is " . $username . " and your password is " . $password;
-     }
-?>
+  if ($result >0) {
+    echo "<script> window .location.href = '../Dashboard.php?name='user''</script>";
+  } else {
+    echo "<script> window .location.href = '../login.php?status=false ' </script>";
+  }
+
+  echo " Your username is " . $username . " and your password is " . $password;
+}
