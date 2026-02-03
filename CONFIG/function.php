@@ -45,5 +45,16 @@ function getUser($user_id){
 return $stmnt->fetchAll(PDO::FETCH_ASSOC);  //return of all object or an array of objects
 
 }
+function retrieveAllProducts() {
+    include "connection.php";
+
+    $sql = "SELECT * FROM products WHERE prod_id = :id";
+    $stmnt = $conn->prepare($sql);
+    $stmnt->execute([
+        "id" => $prod_id
+    ]);
+
+    return $stmnt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 ?>

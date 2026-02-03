@@ -2,6 +2,7 @@
 include "../CONFIG/includes.php";
 
 $list = retrieveAllusers();
+$productList = retrieveAllProducts();
 
 // echo json_encode($list);
 ?>
@@ -28,29 +29,47 @@ include "resources/header.php";
             <th>Name</th>
             <th>Age</th>
             <th>Address</th>
-            <th>username</th>
+            <th>Username</th>
             <th>Action</th>
-
         </tr>
 
-        <?php
-        foreach ($list as $item) {
-
-        ?>
-
+        <?php foreach ($list as $item) { ?>
             <tr>
-                <td> <?= $item["Name"] ?> </td>
-                <td> <?= $item["Age"] ?> </td>
-                <td> <?= $item["Address"] ?> </td>
-                <td> <?= $item["username"] ?> </td>
-                <td> <a href="Viewpage.php?user_id=<?= $item['user_id']?>">View</a> </td>
+                <td><?= $item["Name"] ?></td>
+                <td><?= $item["Age"] ?></td>
+                <td><?= $item["Address"] ?></td>
+                <td><?= $item["username"] ?></td>
+                <td>
+                    <a href="Viewpage.php?user_id=<?= $item['user_id'] ?>">View</a>
+                </td>
             </tr>
+        <?php } ?>
+    </table>
 
+    <br><br>
 
-        <?php
-        }
-        ?>
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Date Added</th>
+            <th>Action</th>
+        </tr>
 
+        <?php foreach ($productList as $product) { ?>
+            <tr>
+                <td><?= $product['prod_name'] ?></td>
+                <td><?= $product['prod_quantity'] ?></td>
+                <td><?= $product['prod_type'] ?></td>
+                <td><?= $product['prod_price'] ?></td>
+                <td><?= $product['prod_date_added'] ?></td>
+                <td>
+                    <a href="Viewpage.php?prod_id=<?= $product['prod_id'] ?>">View</a>
+                </td>
+            </tr>
+        <?php } ?>
     </table>
 
 </body>
