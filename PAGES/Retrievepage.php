@@ -1,4 +1,4 @@
-<?php
+<?php 
 include "../CONFIG/includes.php";
 
 $list = retrieveAllusers();
@@ -6,8 +6,6 @@ $productList = retrieveAllProducts();
 
 // echo json_encode($list);
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,5 +71,4 @@ include "resources/header.php";
     </table>
 
 </body>
-
 </html>
