@@ -93,3 +93,6 @@ table, th , td{
   border: #1f2933 solid 1px;
 }
 
+form{
+  padding-top: 5%;
+}

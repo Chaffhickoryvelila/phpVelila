@@ -64,7 +64,7 @@ include "resources/header.php";
                 <td><?= $product['prod_price'] ?></td>
                 <td><?= $product['prod_date_added'] ?></td>
                 <td>
-                    <a href="Viewpage.php?prod_id=<?= $product['prod_id'] ?>">View</a>
+                    <a href="Viewproduct.php?prod_id=<?= $product['prod_id'] ?>">View</a>
                 </td>
             </tr>
         <?php } ?>
