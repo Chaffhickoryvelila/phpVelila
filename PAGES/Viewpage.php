@@ -24,17 +24,24 @@ include "resources/header.php";
     ?>
 
     <!--Contents -->
-    <form action="" method="POST">
-        <label for="user_name">Name</label>
-        <input name="user_name" type="text" value="<?= $getUser[0]['Name'] ?>">
-        <label for="user_name">Age</label>
-        <input name="user_name" type="number" value="<?= $getUser[0]['Age'] ?>">
-        <label for="user_name">Address</label>
-        <input name="user_name" type="text" value="<?= $getUser[0]['Address'] ?>">
+    <form action="FUNCTIONS/updateUser.php" method="POST">
+        <label for="name">Name</label>
+        <input name="name" type="text" value="<?= $getUser[0]['Name'] ?>">
+
+        <label for="age">Age</label>
+        <input name="age" type="number" value="<?= $getUser[0]['Age'] ?>">
+
+        <label for="address">Address</label>
+        <input name="address" type="text" value="<?= $getUser[0]['Address'] ?>">
+
         <label for="user_name">Username</label>
         <input name="user_name" type="text" value="<?= $getUser[0]['username'] ?>">
-         <label for="user_name">Password</label>
-          <input name="user_name" type="text" value="<?= $getUser[0]['password'] ?>">
+
+         <label for="password">Password</label>
+          <input name="password" type="text" value="<?= $getUser[0]['password'] ?>">
+
+         <input type="text" name="user_id" value="<?= $getUser[0]['user_id'] ?>" hidden>
+
 
         <button>Edit</button>
     </form>
