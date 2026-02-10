@@ -10,7 +10,7 @@ if (isset($_POST['prod_id'])) {
     $prodPrice    = $_POST['prod_price'];
     $prodDate     = $_POST['prod_date_added'];
 
-    // Call product update function
+   
     $result = updateProduct(
         $prodID,
         $prodName,
