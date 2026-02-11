@@ -84,13 +84,13 @@ function updateUser($userid, $name, $age, $address, $usernames, $passwords)
     ";
     $stmnt = $conn->prepare($sql);
     $stmnt->execute([
-       "name" => $name,
-       "age" => $age,
-       "address" => $address,
-       "username" => $usernames,
-       "password" => $passwords,
-       "user_id" => $userid
-    
+        "name" => $name,
+        "age" => $age,
+        "address" => $address,
+        "username" => $usernames,
+        "password" => $passwords,
+        "user_id" => $userid
+
     ]);
 
     return $stmnt;  //return of all object or an array of objects
@@ -118,6 +118,35 @@ function updateProduct($prod_id, $prod_name, $prod_quantity, $prod_type, $prod_p
         "prod_price"      => $prod_price,
         "prod_date_added" => $prod_date_added,
         "prod_id"  => $prod_id
-     ]);
-     return $stmnt;
+    ]);
+    return $stmnt;
+}
+function deleteUSer($id)
+{
+    include "connection.php";
+
+    $sql = "DELETE FROM user WHERE user_id = :id";
+    $stmnt = $conn->prepare($sql);
+    $stmnt->execute([
+        "id" => $id
+    ]);
+
+
+
+    return $stmnt;
+}
+
+
+
+function deleteProduct($id)
+{
+    include "connection.php";
+
+    $sql = "DELETE FROM products WHERE prod_id = :id";
+    $stmnt = $conn->prepare($sql);
+    $stmnt->execute([
+        "id" => $id
+    ]);
+
+    return $stmnt;
 }
